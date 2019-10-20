@@ -22,6 +22,7 @@ class Iniciosesion : AppCompatActivity(){
 
         setContentView(R.layout.activity_iniciosesion)
 
+
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener(View.OnClickListener {
             loginUser()
@@ -41,7 +42,6 @@ class Iniciosesion : AppCompatActivity(){
         txtPass=findViewById(R.id.txtPass)
         auth=FirebaseAuth.getInstance()
     }
-
 
     private fun loginUser(){
         val user:String=txtUser.text.toString()

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,10 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-
-            val intent = Intent(this@MainActivity, Iniciosesion::class.java)
-            startActivity(intent)
-            finish()
+            checaSesion()
         }
     }
 
@@ -23,12 +23,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Initialize the Handler
         mDelayHandler = Handler()
 
-        //Navigate with delay
         mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
 
+    }
+
+    fun checaSesion(){
+        val auth = FirebaseAuth.getInstance()
+        val authListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+            val firebaseUser = firebaseAuth.currentUser
+            if (firebaseUser != null) {
+                startActivity(Intent(this@MainActivity, Opciones::class.java))
+            } else {
+                startActivity(Intent(this@MainActivity, Iniciosesion::class.java))
+            }
+            finish()
+        }
+        auth.addAuthStateListener(authListener);
     }
 
     public override fun onDestroy() {
@@ -36,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         if (mDelayHandler != null) {
             mDelayHandler!!.removeCallbacks(mRunnable)
         }
-
         super.onDestroy()
     }
 }

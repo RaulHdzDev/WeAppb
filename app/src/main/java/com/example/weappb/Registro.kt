@@ -6,18 +6,12 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Button
-//import android.view.Window
-//import android.view.WindowManager
 import android.widget.EditText
-//import android.widget.Switch
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_registro.*
-
-//import kotlinx.android.synthetic.main.activity_iniciosesion.*
 
 
 class Registro : AppCompatActivity() {
