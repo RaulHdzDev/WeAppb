@@ -57,33 +57,32 @@
             android:textAlignment="center"
             android:textColor="#fff"
             android:textColorHint="#fff" />
+
         <Button
-            android:onClick="login"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="25dp"
             android:background="@drawable/fondoazul"
             android:fontFamily="@font/comfortaa_light"
-            android:textSize="24dp"
-            android:layout_margin="25dp"
             android:padding="5dp"
-            android:text="ENTRAR" />
+            android:text="ENTRAR"
+            android:textSize="24dp" />
 
         <TextView
-            android:id="@+id/contraseña"
+            android:id="@+id/btnRecuperarContraseña"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/underlineblanco"
             android:fontFamily="@font/comfortaa_bold"
-            android:onClick="clickRecuperarContraseña"
             android:paddingTop="20dp"
             android:text="¿Olvidaste tu contraseña?"
             android:textColor="#FFF"
             android:textSize="15dp" />
         <TextView
-            android:onClick="clickRegistro"
             android:paddingTop="20dp"
-            android:id="@+id/registro"
+            android:id="@+id/btnRegistro"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_gravity="center"

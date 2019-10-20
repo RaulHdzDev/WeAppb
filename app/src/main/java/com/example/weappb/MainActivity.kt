@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
 
-            val intent = Intent(applicationContext, Iniciosesion::class.java)
+            val intent = Intent(this@MainActivity, Iniciosesion::class.java)
             startActivity(intent)
             finish()
         }

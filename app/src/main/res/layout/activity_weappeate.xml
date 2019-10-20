@@ -72,18 +72,19 @@
                 android:fontFamily="@font/comfortaa_bold"
                 />
         </LinearLayout>
+
         <Button
+            android:id="@+id/btnContinuarWeappeate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
             android:layout_gravity="center"
-            android:textColor="#fff"
-            android:textAlignment="center"
-            android:text="Genial, ¡Vamos allá!"
+            android:layout_margin="20dp"
             android:background="@drawable/fondoazul"
-            android:textSize="20dp"
             android:fontFamily="@font/comfortaa_bold"
-            />
+            android:text="Genial, ¡Vamos allá!"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="20dp" />
     </LinearLayout>
 
 

@@ -1,13 +1,12 @@
 package com.example.weappb
 
-
-//Putomelapelas
-
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -20,24 +19,29 @@ class Iniciosesion : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_iniciosesion)
+
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        btnLogin.setOnClickListener(View.OnClickListener {
+            loginUser()
+        })
+
+        val btnRegistro = findViewById<TextView>(R.id.btnRegistro)
+        btnRegistro.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this@Iniciosesion, Registro::class.java))
+        })
+
+        val btnRecuperarContraseña = findViewById<TextView>(R.id.btnRecuperarContraseña)
+        btnRecuperarContraseña.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this@Iniciosesion, Recuperar::class.java))
+        })
 
         txtUser=findViewById(R.id.txtUser)
         txtPass=findViewById(R.id.txtPass)
         auth=FirebaseAuth.getInstance()
     }
 
-    fun clickRegistro(view: View){
-        startActivity(Intent(this, Registro::class.java))
-    }
-
-    fun clickRecuperarContraseña(view: View){
-        startActivity(Intent(this, Recuperar::class.java))
-    }
-
-    fun login(view: View){
-        loginUser()
-    }
 
     private fun loginUser(){
         val user:String=txtUser.text.toString()
@@ -49,7 +53,7 @@ class Iniciosesion : AppCompatActivity(){
                     task ->
 
                     if (task.isSuccessful){
-                        accion()
+                        abrirOpciones()
                     }
                     else{
                         Toast.makeText(this,"Error en el inicio de sesión",Toast.LENGTH_LONG).show()
@@ -58,8 +62,9 @@ class Iniciosesion : AppCompatActivity(){
         }
     }
 
-    private fun accion(){
-        startActivity(Intent(this,Weappeate::class.java))
+    private fun abrirOpciones(){
+        startActivity(Intent(this@Iniciosesion,Opciones::class.java))
+        finish()
     }
 
 }
