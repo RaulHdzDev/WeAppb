@@ -38,6 +38,7 @@
             android:fontFamily="@font/comfortaa_bold"
             android:hint="Correo"
             android:padding="20dp"
+            android:inputType="textEmailAddress"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textColorHint="#fff" />/

@@ -37,13 +37,6 @@
             android:textColor="#fff"
             android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="178dp"
-            android:layout_height="161dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/img_opciones" />
 
         <Button
             android:id="@+id/btnCubeta"
@@ -104,6 +97,14 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
+
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            />
     </LinearLayout>
 
 
