@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
     private val SPLASH_DELAY: Long = 2630 //3 seconds
 
+    private lateinit var auth:FirebaseAuth
+
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
             checaSesion()
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         mDelayHandler = Handler()
 
